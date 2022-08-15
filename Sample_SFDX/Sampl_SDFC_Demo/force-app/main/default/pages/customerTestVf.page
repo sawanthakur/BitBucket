@@ -1,0 +1,22 @@
+<apex:page controller="TestCustomerBatchForAccount">
+    <apex:form >
+
+        <apex:pageBlock title="Search input value" >
+            <apex:inputText value="{!searchInput}"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:commandButton value="Replace Value" action="{!SearchBox}"/>
+        </apex:pageBlock>
+        <apex:pageBlock >
+            <apex:pageBlockSection title="Matching Customer records">
+                <apex:pageBlockTable value="{!Result }" var="r">
+                    <apex:column headerValue="Name">
+                        <apex:outputField value="{!r.Name}"/>
+                    </apex:column>
+                    <apex:column headerValue="Account Type">
+                        <apex:outputField value="{!r.Account_type__c }"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+
+    </apex:form>
+</apex:page>
